@@ -1,4 +1,5 @@
 <?php
+include_once '../models/database.php';
 if(isset($_POST['adminLogin'])){
     $admin_email = $_POST['user_email'];
     $password = $_POST['user_password'];
@@ -20,6 +21,14 @@ if(isset($_POST['adminLogin'])){
         echo "Admin Pass did not match...";
     }
 
+}
+
+if(isset($_POST['adminSignUp'])){
+
+    $db = new DataBase();
+    echo 'csewaf';
+    $db->dbConnection();
+    $db->insertAdmin($_POST['admin_full_Name'], $_POST['admin_email_address'], $_POST['admin_pass']);
 }
 
 ?>

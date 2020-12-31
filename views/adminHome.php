@@ -1,3 +1,7 @@
+<?php
+include_once '../controllers/adminController.php';
+?>
+
 <html>
 <head>
 </head>
@@ -5,7 +9,9 @@
 <form action="Login.php" method="post">
     <input type="submit" name="log_out" value="Log Out">
 </form>
-fo
+<form action="adminSignUp.php" method="post">
+    <input type="submit" name="addAdmin" value="Add Admin">
+</form>
 </body>
 </html>
 <?php

@@ -128,6 +128,31 @@ class DataBase{
         echo "fega";
     }
 
+    function insertAdmin($name, $email, $pass){
+        /*create sequence admin_id_seq
+        start with 150
+        increment by 10;*/
+
+        /*create or replace procedure insert_Admin(name admins.admin_name%type, email admins.admin_email%type, pass admins.admin_pass%type)
+        as
+        begin
+        insert into admins (admin_id, admin_name, admin_email, admin_pass)
+                    values (admin_id_seq.nextval, name, email, pass);
+        end;*/
+
+        $query = "begin insert_Admin(:name, :email, :pass); end;";
+
+        $result = oci_parse($this->conn, $query);
+
+        oci_bind_by_name($result, ':name', $name, 100);
+        oci_bind_by_name($result, ':email', $email, 100);
+        oci_bind_by_name($result, ':pass', $pass, 100);
+
+        oci_execute($result);
+        //return $b_id;
+        oci_close($this->conn);
+    }
+
     function searchAdmin($email, $password){
         $query = "select admin_email, admin_pass from admins where admin_email = '$email' and admin_pass = '$password'";
         $result = oci_parse($this->conn, $query);
