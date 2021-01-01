@@ -11,6 +11,8 @@ foreach ($seller_id as $sID){
 
 }
 echo  "<br>".$sID;
+include_once '../controllers/productController.php';
+
 ?>
 
 <html>
@@ -26,6 +28,7 @@ echo  "<br>".$sID;
     <input type="submit" name="sellerList" value="Seller List">
     <input type="submit" name="sellerList2" value="Seller List 2">
     <input type="submit" name="sellerProfile1" value="Profile">
+    <input type="submit" name="addProduct" value="Add A Fruit Product">
 </form>
 <strong><hr></strong>
 <table align="center">

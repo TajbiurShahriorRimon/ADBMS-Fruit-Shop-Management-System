@@ -293,6 +293,21 @@ class DataBase{
         echo 'lop ends'."<br>";*/
     }
 
+    function insertProduct($name, $price, $unit, $s_id, $file){
+        $query = "begin insert_product (:name, :price, :unit, :s_id, :file); end;";
+
+        $stid = oci_parse($this->conn, $query);
+
+        oci_bind_by_name($stid, ":name", $name, 1000);
+        oci_bind_by_name($stid, ":price", $price, 1000);
+        oci_bind_by_name($stid, ":unit", $unit, 1000);
+        oci_bind_by_name($stid, ":s_id", $s_id, 1000);
+        oci_bind_by_name($stid, ":file", $file, 1000);
+
+        oci_execute($stid);
+
+    }
+
     function sellerProduct($s_id){
         $query = "begin seller_product(:data, :s_id); end;";
 
