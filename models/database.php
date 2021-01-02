@@ -294,6 +294,45 @@ class DataBase{
     }
 
     function insertProduct($name, $price, $unit, $s_id, $file){
+        /*create or replace trigger check_price
+        before insert on products
+
+        for each row
+        declare
+        product_price products.price%type;
+
+        begin
+        if (:new.price < 0) then
+           Raise_application_error(-20119,'Price Cannot be Negative');
+        end if;
+        end;*/
+
+        /*create or replace trigger check_unit_kg
+        before insert on products
+
+        for each row
+
+            begin
+        if (:new.unit_kg < 0) then
+           Raise_application_error(-20120,'Unit/KG Cannot be Negative');
+        end if;
+        end;*/
+
+        /*create sequence product_id_seq
+        start with 450
+        increment by 10;*/
+
+
+        /*create or replace procedure insert_product(p_name products.product_name%type, p_price products.price%type, p_unit_kg products.unit_kg%type, s_id products.seller_id%type, p_file products.product_file%type)
+        is
+
+        begin
+
+        insert into products (PRODUCT_ID, PRODUCT_NAME, PRICE, UNIT_KG, SELLER_ID, STATUS, PRODUCT_FILE)
+        values(product_id_seq.nextval, p_name, p_price, p_unit_kg, s_id, 'VALID', p_file);
+        end;*/
+
+
         $query = "begin insert_product (:name, :price, :unit, :s_id, :file); end;";
 
         $stid = oci_parse($this->conn, $query);
@@ -339,7 +378,7 @@ class DataBase{
 
             begin
             open data for
-                        select product_name, price, unit_kg
+                        select product_name, price, unit_kg, product_file
                         from products
             where status = 'VALID';
 
@@ -367,6 +406,54 @@ class DataBase{
         oci_free_statement($stid);
         oci_free_statement($curs);
         oci_close($this->conn);
+    }
+
+    /*function sellerShortInformation(){
+        $query = "begin seller_details_list(:data); end;";
+
+        $curs = oci_new_cursor($this->conn);
+        $stid = oci_parse($this->conn, $query);
+
+        oci_bind_by_name($stid, ":data", $curs, -1, OCI_B_CURSOR);
+        oci_execute($stid);
+
+        $data = [];
+
+        oci_execute($curs);
+
+        while (($row = oci_fetch_array($curs, OCI_ASSOC+OCI_RETURN_NULLS)) != false) {
+            $data[] = $row;
+            //print_r($row);
+            //echo $row['PRICE'] . "<br />\n";
+        }
+
+        oci_free_statement($stid);
+        oci_free_statement($curs);
+        oci_close($this->conn);
+    }*/
+
+    function sellerShortInformation(){
+        $query = "select * from seller_details";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+            while (($row = oci_fetch_assoc($result)) != false) {
+                //print_r($data);
+                $data [] = $row;
+                //$data = $rowArray;
+                //echo $data['SELLER_NAME'];
+            }
+            return $data;
+        /*}
+        else{
+            return $data;
+        }*/
+        echo "fega";
     }
 
 }

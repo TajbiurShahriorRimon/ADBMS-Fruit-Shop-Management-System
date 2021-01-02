@@ -5,8 +5,8 @@ include_once '../controllers/buyerController.php';
 $db = new DataBase();
 $db->dbConnection();
 $buyer_id = $db->fetchBuyerID($b_email);
-$d = data("j, n, Y");
-echo $d;
+//$d = data("j, n, Y");
+//echo $d;
 foreach ($buyer_id as $bID){
 
 }
@@ -20,6 +20,9 @@ echo  "<br>".$bID;
 <form action="Login.php" method="post">
     <input type="submit" name="log_out" value="Log Out">
 </form>
+<form action="sellerShortDetails.php" method="post">
+    <input type="submit" name="sellerShortDetails" value="Seller List">
+</form>
 <table align="center">
     <?php
     $db = new DataBase();
@@ -29,6 +32,15 @@ echo  "<br>".$bID;
     if(!empty($row)){
 
         foreach ($row as $data){
+
+            echo "<tr>";
+            echo "<td>";
+            echo "<img src='{$data['PRODUCT_FILE']}' height=200 width=300>" . "<br>"."
+                        <hr>
+                    </td>
+                   
+                    </tr>";
+
             echo "<tr>";
             echo "<td>";
             echo $data['PRODUCT_NAME']."
