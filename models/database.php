@@ -433,6 +433,14 @@ class DataBase{
     }*/
 
     function sellerShortInformation(){
+        /*create or replace view
+        seller_details
+        as
+
+        select seller_name, seller_email
+        from sellers;
+        */
+        
         $query = "select * from seller_details";
 
         $result = oci_parse($this->conn, $query);
