@@ -445,6 +445,11 @@ class DataBase{
             while (($row = oci_fetch_assoc($result)) != false) {
                 //print_r($data);
                 $data [] = $row;
+                //echo $data['SELLER_NAME'];
+                //echo $data['SELLER_EMAIL'];
+                
+                
+                
                 //$data = $rowArray;
                 //echo $data['SELLER_NAME'];
             }
