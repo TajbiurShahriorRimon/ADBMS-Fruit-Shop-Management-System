@@ -22,14 +22,28 @@ include_once '../controllers/productController.php';
 <form action="Login.php" method="post">
     <input type="submit" name="log_out" value="Log Out"> <br> <br>
 </form>
+<table>
 <form action="" method="post">
-    <input type="submit" name="sellerInfo" value="My Info">
-    <input type="submit" name="sellerProfile" value="My Profile">
-    <input type="submit" name="sellerList" value="Seller List">
-    <input type="submit" name="sellerList2" value="Seller List 2">
-    <input type="submit" name="sellerProfile1" value="Profile">
-    <input type="submit" name="addProduct" value="Add A Fruit Product">
+    <tr>
+        <td><input type="submit" name="sellerInfo" value="My Info"></td>
+
+        <td><input type="submit" name="sellerProfile" value="My Profile"></td>
+        <td><input type="submit" name="sellerList" value="Seller List"></td>
+        <td><input type="submit" name="sellerList2" value="Seller List 2"></td>
+        <td><input type="submit" name="sellerProfile1" value="Profile"></td>
+        <td><input type="submit" name="addProduct" value="Add A Fruit Product"></td>
+    </tr>
 </form>
+</table>
+
+<table>
+    <tr>
+        <form action="adminContactList.php" method="post">
+        <td><input type="submit" name="adminShortContactList" value="Admin Contact List"></td>
+        </form>
+    </tr>
+</table>
+
 <strong><hr></strong>
 <table align="center">
     <?php

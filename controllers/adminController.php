@@ -31,4 +31,11 @@ if(isset($_POST['adminSignUp'])){
     $db->insertAdmin($_POST['admin_full_Name'], $_POST['admin_email_address'], $_POST['admin_pass']);
 }
 
+function adminShortInformation(){
+    $db = new DataBase();
+    $db->dbConnection();
+    $result = $db->adminShortList();
+    return $result;
+}
+
 ?>

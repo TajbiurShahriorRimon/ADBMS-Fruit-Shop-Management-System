@@ -23,5 +23,26 @@ if(isset($_POST['addFruitProduct'])){
     $db->dbConnection();
     $db->insertProduct($name, $price, $unit, $s_id, $filepath);
 }
+function shortDetails(){
+    $db = new DataBase();
+    $db->dbConnection();
+    $result = $db->allProductsShortDetails();
+    return $result;
+
+}
+
+function buyerProductShortOrderList(){
+    $db = new DataBase();
+    $db->dbConnection();
+    $result = $db->buyerSellerProductsShortDetails();
+    return $result;
+}
+
+function sellersProductHistShort(){
+    $db = new DataBase();
+    $db->dbConnection();
+    $result = $db->sellersShortInfoWithProductHist();
+    return $result;
+}
 ?>
 

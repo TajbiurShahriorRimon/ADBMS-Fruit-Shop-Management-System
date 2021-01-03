@@ -445,8 +445,6 @@ class DataBase{
             while (($row = oci_fetch_assoc($result)) != false) {
                 //print_r($data);
                 $data [] = $row;
-                //$data = $rowArray;
-                //echo $data['SELLER_NAME'];
             }
             return $data;
         /*}
@@ -454,6 +452,116 @@ class DataBase{
             return $data;
         }*/
         echo "fega";
+    }
+
+    function allProductsShortDetails(){
+        /*create or replace view all_products_short_details
+        as
+        select product_name, seller_id, status
+        from products*/
+
+        $query = "select * from all_products_short_details";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+        while (($row = oci_fetch_assoc($result)) != false) {
+            //print_r($data);
+            $data [] = $row;
+        }
+        return $data;
+        /*}
+        else{
+            return $data;
+        }*/
+        echo "fega";
+    }
+
+    function buyerSellerProductsShortDetails(){
+        /*create or replace view buyer_seller_short_products
+        as
+        select products.product_id, product_name, buyer_id
+        from order_history, products
+        where order_history.product_id = products.product_id*/
+
+        $query = "select * from buyer_seller_short_products";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+        while (($row = oci_fetch_assoc($result)) != false) {
+            //print_r($data);
+            $data [] = $row;
+        }
+        return $data;
+        /*}
+        else{
+            return $data;
+        }*/
+        echo "fega";
+    }
+
+    function adminShortList(){
+        /*create or replace view admin_short_list
+        as
+        select admin_name, admin_email
+        from admins;*/
+
+        $query = "select * from admin_short_list";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+        while (($row = oci_fetch_assoc($result)) != false) {
+            //print_r($data);
+            $data [] = $row;
+        }
+        return $data;
+        /*}
+        else{
+            return $data;
+        }*/
+        echo "fega";
+    }
+
+    function sellersShortInfoWithProductHist(){
+
+        /*create or replace view seller_short_info_product
+        as
+        select sellers.seller_id, seller_name, product_name, status
+        from sellers, products
+        where sellers.seller_id in (
+                    select sellers.seller_id
+        from sellers, products
+        where sellers.seller_id = products.seller_id)
+        and sellers.seller_id = products.seller_id;*/
+
+        $query = "select * from seller_short_info_product";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+        while (($row = oci_fetch_assoc($result)) != false) {
+            //print_r($data);
+            $data [] = $row;
+        }
+        return $data;
     }
 
 }
