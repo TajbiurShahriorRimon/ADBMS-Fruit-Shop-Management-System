@@ -433,6 +433,14 @@ class DataBase{
     }*/
 
     function sellerShortInformation(){
+        /*create or replace view
+        seller_details
+        as
+
+        select seller_name, seller_email
+        from sellers;
+        */
+        
         $query = "select * from seller_details";
 
         $result = oci_parse($this->conn, $query);
@@ -445,6 +453,16 @@ class DataBase{
             while (($row = oci_fetch_assoc($result)) != false) {
                 //print_r($data);
                 $data [] = $row;
+<<<<<<< HEAD
+=======
+                //echo $data['SELLER_NAME'];
+                //echo $data['SELLER_EMAIL'];
+                
+                
+                
+                //$data = $rowArray;
+                //echo $data['SELLER_NAME'];
+>>>>>>> 4f3eaf308cbc5ab36110ddfa9ea93807605ee1c1
             }
             return $data;
         /*}
