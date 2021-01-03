@@ -35,8 +35,9 @@ echo  "<br>".$bID;
 
             echo "<tr>";
             echo "<td>";
+            //echo "pid:".$data['PRODUCT_ID'];
             echo "<img src='{$data['PRODUCT_FILE']}' height=200 width=300>" . "<br>"."
-                        <hr>
+                       
                     </td>
                    
                     </tr>";
@@ -56,10 +57,16 @@ echo  "<br>".$bID;
             echo "<tr>";
             echo "<td>";
             echo $data['UNIT_KG']."
-                        <hr>
+                        
                     </td>
                    
                     </tr>";
+            echo "<tr>
+                <td>";
+            //echo  "<a id='orderLinkBtn' href='orderProduct.php?product_id=" . $data['PRODUCT_ID']."&buyer_id=".$buyer_id."'>Order Now</a>";
+            echo   "<a id='orderLinkBtn' href='orderProduct.php?p_id=" .$data['PRODUCT_ID'] ." &buyer_id=". $bID." &b_email=". $b_email."'>" ."ORDER NOW".  "</a>";
+            echo  "      <hr>
+                </td>";
 
         }
 

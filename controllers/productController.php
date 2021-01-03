@@ -44,5 +44,6 @@ function sellersProductHistShort(){
     $result = $db->sellersShortInfoWithProductHist();
     return $result;
 }
+
 ?>
 

@@ -378,7 +378,7 @@ class DataBase{
 
             begin
             open data for
-                        select product_name, price, unit_kg, product_file
+                        select product_id, product_name, price, unit_kg, product_file
                         from products
             where status = 'VALID';
 
@@ -453,8 +453,7 @@ class DataBase{
             while (($row = oci_fetch_assoc($result)) != false) {
                 //print_r($data);
                 $data [] = $row;
-<<<<<<< HEAD
-=======
+
                 //echo $data['SELLER_NAME'];
                 //echo $data['SELLER_EMAIL'];
                 
@@ -462,7 +461,6 @@ class DataBase{
                 
                 //$data = $rowArray;
                 //echo $data['SELLER_NAME'];
->>>>>>> 4f3eaf308cbc5ab36110ddfa9ea93807605ee1c1
             }
             return $data;
         /*}
@@ -580,6 +578,34 @@ class DataBase{
             $data [] = $row;
         }
         return $data;
+    }
+
+    function addOrder($p_id, $b_id){
+        /*create or replace function insert_order (p_id in order_history.product_id%type, b_id order_history.buyer_id%type)
+        return number
+        as
+        begin
+        insert into order_history values (hist_id_increment.nextval, p_id, b_id);
+        return 1;
+        end;*/
+
+        $query = "begin :x := insert_order(:p, :b); end;";
+        //$query = "insert into order_history values (550, '$p_id', '$b_id')";
+
+        $stid = oci_parse($this->conn, $query);
+        //oci_execute($result);
+
+        oci_bind_by_name($stid, ':p', $p_id, 1000);
+        //$p_id = $p;
+        oci_bind_by_name($stid, ':b', $b_id, 1000);
+        //$b_id = $b;
+
+        oci_bind_by_name($stid, ':x', $r, 40);
+
+        oci_execute($stid);
+
+        oci_free_statement($stid);
+        oci_close($this->conn);
     }
 
 }
