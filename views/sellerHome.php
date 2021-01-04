@@ -70,6 +70,9 @@ include_once '../controllers/productController.php';
         <form action="adminContactList.php" method="post">
         <td><input type="submit" name="adminShortContactList" value="Admin Contact List"></td>
         </form>
+        <form action="" method="post">
+            <td><input type="submit" name="sellerBuyerList" value="My Buyer List"></td>
+        </form>
     </tr>
 </table>
 

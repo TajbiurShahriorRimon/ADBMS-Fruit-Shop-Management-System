@@ -783,5 +783,27 @@ end if;
         }
         return $data;
     }
+
+    function sellerBuyersList($s_id){
+        $query = "select buyers.buyer_id, buyer_name, product_name, seller_name
+                    from buyers, order_history, products, sellers
+                    where buyers.buyer_id = order_history.buyer_id
+                    and order_history.product_id = products.product_id
+                    and sellers.seller_id = products.seller_id
+                    and sellers.seller_id = '$s_id'";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+        while (($row = oci_fetch_assoc($result)) != false) {
+            //print_r($data);
+            $data [] = $row;
+        }
+        return $data;
+    }
 }
 ?>

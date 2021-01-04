@@ -23,6 +23,11 @@ if(isset($_POST['addFruitProduct'])){
     $db->dbConnection();
     $db->insertProduct($name, $price, $unit, $s_id, $filepath);
 }
+
+if(isset($_POST['sellerBuyerList'])){
+    header("Location: sellerBuyerList.php?s_id=".$sID);
+}
+
 function shortDetails(){
     $db = new DataBase();
     $db->dbConnection();
