@@ -348,6 +348,17 @@ class DataBase{
     }
 
     function sellerProduct($s_id){
+        /*create or replace procedure seller_product(data out sys_refcursor, s_id in products.seller_id%type)
+        as
+
+        begin
+        open data for
+
+                    select * from products
+                    where status = 'VALID'
+                and seller_id = s_id;
+        end;*/
+
         $query = "begin seller_product(:data, :s_id); end;";
 
         $curs = oci_new_cursor($this->conn);
@@ -608,5 +619,31 @@ class DataBase{
         oci_close($this->conn);
     }
 
+    function removeProductSeller($p_id){
+        /*create or replace function remove_product_seller (p_id in order_history.product_id%type)
+        return number
+        as
+        begin
+        update products
+        set status = 'INVALID'
+        where product_id = p_id;
+        return 1;
+        end;*/
+        
+        $query = "begin :x := remove_product_seller(:p); end;";
+
+        $stid = oci_parse($this->conn, $query);
+
+        oci_bind_by_name($stid, ':p', $p_id, 1000);
+
+        oci_bind_by_name($stid, ':x', $r, 40);
+
+        oci_execute($stid);
+
+        oci_execute($stid);
+
+        oci_free_statement($stid);
+        oci_close($this->conn);
+    }
 }
 ?>

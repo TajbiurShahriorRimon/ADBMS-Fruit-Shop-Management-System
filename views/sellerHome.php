@@ -17,6 +17,23 @@ include_once '../controllers/productController.php';
 
 <html>
 <head>
+    <style>
+        a:link, a:visited {
+            background-color: #f44336;
+            color: #000000;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover, a:active {
+            background-color: #033c11;
+        }
+        body{
+            background-color: ThreeDLightShadow;
+        }
+    </style>
 </head>
 <body>
 <form action="Login.php" method="post">
@@ -56,22 +73,34 @@ include_once '../controllers/productController.php';
             foreach ($row as $data){
                 echo "<tr>";
                 echo "<td>";
+                //echo "pid:".$data['PRODUCT_ID'];
+                echo "<img src='{$data['PRODUCT_FILE']}' height=200 width=300>" . "<br>"."
+                       
+                    </td>
+                   
+                    </tr>";
+
+                echo "<tr>";
+                echo "<td> <strong>Name: </strong>";
                 echo $data['PRODUCT_NAME']."
                     </td>
                     </tr>";
 
                 echo "<tr>";
-                echo "<td>";
+                echo "<td> <strong>Price: </strong>";
                 echo $data['PRICE']."
                     </td>
                     </tr>";
 
                 echo "<tr>";
-                echo "<td>";
+                echo "<td> <strong>Unit/KG: </strong>";
                 echo $data['UNIT_KG']."
                         <hr>
-                    </td>
-                   
+                    </td>";
+
+                echo "<td>
+                 <a href='removeProduct.php?p_id=" . $data['PRODUCT_ID'] ." &s_email=".$s_email."' name='." . $data['PRODUCT_ID'] . ".'>REMOVE PRODUCT</a>
+                </td> 
                     </tr>";
 
             }

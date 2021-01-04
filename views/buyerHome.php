@@ -15,6 +15,23 @@ echo  "<br>".$bID;
 
 <html>
 <head>
+    <style>
+        a:link, a:visited {
+            background-color: #366cf4;
+            color: #000000;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        a:hover, a:active {
+            background-color: #b4d2bc;
+        }
+        body{
+            background-color: ThreeDLightShadow;
+        }
+    </style>
 </head>
 <body>
 <form action="Login.php" method="post">
