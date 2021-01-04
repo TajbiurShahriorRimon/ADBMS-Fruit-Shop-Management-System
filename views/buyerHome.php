@@ -60,19 +60,19 @@ echo  "<br>".$bID;
                     </tr>";
 
             echo "<tr>";
-            echo "<td>";
+            echo "<td><strong>NAME: </strong>";
             echo $data['PRODUCT_NAME']."
                     </td>
                     </tr>";
 
             echo "<tr>";
-            echo "<td>";
+            echo "<td><strong>PRICE: </strong>";
             echo $data['PRICE']."
                     </td>
                     </tr>";
 
             echo "<tr>";
-            echo "<td>";
+            echo "<td><strong>UNIT/KG: </strong>";
             echo $data['UNIT_KG']."
                         
                     </td>

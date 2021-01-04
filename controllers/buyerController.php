@@ -34,6 +34,7 @@ if(isset($_POST['buyerSignUp'])){
     $generatedId = $db->generateBuyerId();
     echo $generatedId;
     if($generatedId >= 10) {
+        echo
         $db->insertBuyer($generatedId, $_POST['full_Name'], $_POST['user_email_address'], $_POST['user_pass']);
     }
     else{

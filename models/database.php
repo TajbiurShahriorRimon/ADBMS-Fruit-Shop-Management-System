@@ -88,23 +88,64 @@ class DataBase{
         end if;
         end;*/
 
-        $query = "insert into buyers (buyer_id, buyer_name, buyer_email, buyer_pass)
-        values ($b_id, '$b_name', '$b_email', '$b_pass')";
+        /*$query = "insert into buyers (buyer_id, buyer_name, buyer_email, buyer_pass) values ('$b_id', '$b_name', '$b_email', '$b_pass')";
 
         $result = oci_parse($this->conn, $query);
-        try {
+        oci_execute($result);*/
+        //Above 3 lines
+
+        /*try {
             $exception = oci_execute($result);
             throw new Exception('Number is zero.');
         } catch (Exception $e){
 
             return 0;
-        }
+        }*/
 
+        //oci_free_statement($result);
 
-
-        oci_free_statement($result);
-        oci_close($this->conn);
+        //also below one line
+        //oci_close($this->conn);
         //return 1;
+
+        //Here the new code.......
+
+        /*create sequence buyer_id_seq
+        start with 270
+        increment by 10;*/
+
+        /*create or replace procedure insert_buyer_info(name buyers.buyer_name%type, email buyers.buyer_email%type, pass buyers.buyer_pass%type)
+        as
+        begin
+        insert into buyers (buyer_id, buyer_name, buyer_email, buyer_pass)
+                    values (buyer_id_seq.nextval, name, email, pass);
+        end;*/
+
+        /*create or replace trigger check_email_buyer_for_valid
+        before insert on buyers
+
+        for each row
+        declare
+        count_email int;
+        begin
+        select count(*) into count_email from buyers
+        where buyer_email = :new.buyer_email;
+        if(count_email > 0) then
+           Raise_application_error(-20116,'Buyer Email already Exists');
+        end if;
+        end;*/
+
+        $query = "begin insert_buyer_info(:name, :email, :pass); end;";
+
+        $result = oci_parse($this->conn, $query);
+
+        oci_bind_by_name($result, ':name', $b_name, 100);
+        oci_bind_by_name($result, ':email', $b_email, 100);
+        oci_bind_by_name($result, ':pass', $b_pass, 100);
+
+        oci_execute($result);
+        //return $b_id;
+        oci_close($this->conn);
     }
 
     function searchSeller($email, $password){
@@ -639,6 +680,40 @@ class DataBase{
         oci_bind_by_name($stid, ':x', $r, 40);
 
         oci_execute($stid);
+
+        oci_execute($stid);
+
+        oci_free_statement($stid);
+        oci_close($this->conn);
+    }
+
+    function changeProductStatus($p_id){
+        /*create or replace function change_product_status (p_id in products.product_id%type)
+        return number
+        as
+        check_status products.status%type;
+        begin
+select status into check_status from products
+where product_id = p_id;
+if(check_status = 'VALID') then
+        update products
+        set status = 'INVALID'
+        where product_id = p_id;
+elsif(check_status = 'INVALID') then
+        update products
+        set status = 'VALID'
+        where product_id = p_id;
+end if;
+        return 1;
+        end;*/
+
+        $query = "begin :x := change_product_status(:p); end;";
+
+        $stid = oci_parse($this->conn, $query);
+
+        oci_bind_by_name($stid, ':p', $p_id, 1000);
+
+        oci_bind_by_name($stid, ':x', $r, 40);
 
         oci_execute($stid);
 

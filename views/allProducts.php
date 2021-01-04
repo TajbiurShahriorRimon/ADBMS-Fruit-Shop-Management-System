@@ -4,7 +4,34 @@ include_once '../controllers/productController.php';
 
 <html>
 <head>
+    <style>
+        a:link, a:visited {
+            background-color: #f44336;
+            color: #000000;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
 
+        a:hover, a:active {
+            background-color: #033c11;
+        }
+        body{
+            background-color: ThreeDLightShadow;
+        }
+
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #5f5911;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <table align="center">
@@ -56,14 +83,15 @@ include_once '../controllers/productController.php';
             echo "<tr>";
             echo "<td> <strong>STATUS: </strong>";
             echo $data['STATUS']."
-                        <hr>
+                        
                     </td>
                     </tr>";
 
-            /*echo "<td>
-                 <a href='removeProduct.php?p_id=" . $data['PRODUCT_ID'] ." &s_email=".$s_email."' name='." . $data['PRODUCT_ID'] . ".'>REMOVE PRODUCT</a>
+            echo "<td>
+                 <a href='changeStatus.php?p_id=" . $data['PRODUCT_ID'] ."' name='." . $data['PRODUCT_ID'] . ".'>Change Status</a>
+                    <hr>
                 </td> 
-                    </tr>";*/
+                    </tr>";
 
         }
 
