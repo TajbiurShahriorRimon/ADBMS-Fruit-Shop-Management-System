@@ -629,7 +629,7 @@ class DataBase{
         where product_id = p_id;
         return 1;
         end;*/
-        
+
         $query = "begin :x := remove_product_seller(:p); end;";
 
         $stid = oci_parse($this->conn, $query);
@@ -644,6 +644,69 @@ class DataBase{
 
         oci_free_statement($stid);
         oci_close($this->conn);
+    }
+
+    function allProducts(){
+        $query = "select * from products";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+        while (($row = oci_fetch_assoc($result)) != false) {
+            //print_r($data);
+            $data [] = $row;
+        }
+        return $data;
+    }
+
+    function topOrderedProduct(){
+        $query = "select seller_id, product_name, product_id, product_file
+                    from products
+                    where product_id = (
+                    select product_id from order_history
+                    having count(*) in (
+                    select max(count(product_id)) from order_history
+                    group by product_id)
+                    group by product_id
+                    )";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+        while (($row = oci_fetch_assoc($result)) != false) {
+            //print_r($data);
+            $data [] = $row;
+        }
+        return $data;
+    }
+
+    function sellerWithNoProduct(){
+        $query = "select seller_id, seller_name from sellers
+                    where seller_id not in (
+                    select distinct sellers.seller_id
+                    from sellers, products
+                    where sellers.seller_id = products.seller_id)";
+
+        $result = oci_parse($this->conn, $query);
+        oci_execute($result);
+        //$row = oci_num_rows($result);
+
+        $data = [];
+        //echo "sdfes";
+        //if($row > 0) {
+        while (($row = oci_fetch_assoc($result)) != false) {
+            //print_r($data);
+            $data [] = $row;
+        }
+        return $data;
     }
 }
 ?>

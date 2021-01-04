@@ -33,6 +33,17 @@ include_once '../controllers/productController.php';
         body{
             background-color: ThreeDLightShadow;
         }
+
+         input[type=button], input[type=submit], input[type=reset] {
+             background-color: #5f5911;
+             border: none;
+             border-radius: 12px;
+             color: white;
+             padding: 15px 25px;
+             text-decoration: none;
+             margin: 4px 2px;
+             cursor: pointer;
+         }
     </style>
 </head>
 <body>
@@ -42,11 +53,12 @@ include_once '../controllers/productController.php';
 <table>
 <form action="" method="post">
     <tr>
+        <!--
         <td><input type="submit" name="sellerInfo" value="My Info"></td>
-
         <td><input type="submit" name="sellerProfile" value="My Profile"></td>
         <td><input type="submit" name="sellerList" value="Seller List"></td>
         <td><input type="submit" name="sellerList2" value="Seller List 2"></td>
+        -->
         <td><input type="submit" name="sellerProfile1" value="Profile"></td>
         <td><input type="submit" name="addProduct" value="Add A Fruit Product"></td>
     </tr>

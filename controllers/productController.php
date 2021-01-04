@@ -45,5 +45,19 @@ function sellersProductHistShort(){
     return $result;
 }
 
+function allProductsList(){
+    $db = new DataBase();
+    $db->dbConnection();
+    $result = $db->allProducts();
+    return $result;
+}
+
+function topOrderProductDetail(){
+    $db = new DataBase();
+    $db->dbConnection();
+    $result = $db->topOrderedProduct();
+    return $result;
+}
+
 ?>
 

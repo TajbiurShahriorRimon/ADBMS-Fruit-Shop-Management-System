@@ -4,6 +4,18 @@ include_once '../controllers/productController.php';
 
 <html>
 <head>
+    <style>
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #5f5911;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <table align="left">
@@ -21,6 +33,21 @@ include_once '../controllers/productController.php';
     </tr>
 </form>
 
+    <form action="noProductSeller.php" method="post">
+        <tr>
+            <td><input type="submit" name="sellerWithNoProduct" value="Seller With No Product"></td>
+        </tr>
+    </form>
+
+</table>
+<table align="right">
+    <tr>
+        <td>
+            <form action="allProducts.php" method="post">
+                <input type="submit" name="allProducts" value="See Products in DETAILS">
+            </form>
+        </td>
+    </tr>
 </table>
 
 <table align="center" border="3" cellpadding="2" width="200">
