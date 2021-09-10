@@ -10,7 +10,7 @@ $seller_id = $db->fetchSellerID($s_email);
 foreach ($seller_id as $sID){
 
 }
-echo  "<br>".$sID;
+/*echo  "<br>".$sID;*/
 include_once '../controllers/productController.php';
 
 ?>
@@ -44,6 +44,28 @@ include_once '../controllers/productController.php';
              margin: 4px 2px;
              cursor: pointer;
          }
+
+        @import url('https://fonts.googleapis.com/css?family=Numans');
+
+        body{
+            background: url('http://3.bp.blogspot.com/-9oJH12YpjJw/V-nzPLn6VNI/AAAAAAAA3eE/SA5m1tFOcHoJvP1zlGPUqq8VBrfBKJRpQCHM/s1600/desktop-hd-images-of-fresh-fruits-and-vegetables.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: fit-content;
+            width: fit-content;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            font-family: 'Numans', sans-serif;
+        }
+        .sellerProduct{
+            color: ThreeDDarkShadow;
+            background-color: #b4d2bc;
+            width: 30%;
+        }
+        }
+        tr{
+            height: 30px;
+        }
     </style>
 </head>
 <body>
@@ -53,12 +75,6 @@ include_once '../controllers/productController.php';
 <table>
 <form action="" method="post">
     <tr>
-        <!--
-        <td><input type="submit" name="sellerInfo" value="My Info"></td>
-        <td><input type="submit" name="sellerProfile" value="My Profile"></td>
-        <td><input type="submit" name="sellerList" value="Seller List"></td>
-        <td><input type="submit" name="sellerList2" value="Seller List 2"></td>
-        -->
         <td><input type="submit" name="sellerProfile1" value="Profile"></td>
         <td><input type="submit" name="addProduct" value="Add A Fruit Product"></td>
     </tr>
@@ -77,7 +93,7 @@ include_once '../controllers/productController.php';
 </table>
 
 <strong><hr></strong>
-<table align="center">
+<table align="center" class="sellerProduct">
     <?php
         $db = new DataBase();
         $db->dbConnection();

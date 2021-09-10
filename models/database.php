@@ -18,19 +18,6 @@ class DataBase{
     }
 
     function insertSeller($s_name, $s_email, $s_pass){
-
-        /*create or replace procedure insert_sellers (s_name in sellers.seller_name%type, s_email in sellers.seller_email%type, s_pass in sellers.seller_pass%type)
-        is
-        id sellers.seller_id%type;
-
-        begin
-
-        select max(seller_id) + 10 into id from sellers;
-
-        insert into sellers (seller_id, seller_name, seller_email, seller_pass)
-        values (id, s_name, s_email, s_pass);
-        end;*/
-
         $query = "begin insert_sellers (:name, :email, :pass); end;";
 
         $result = oci_parse($this->conn, $query);

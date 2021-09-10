@@ -7,6 +7,16 @@ include_once '../controllers/buyerController.php';
 <html>
 <head>
     <style>
+        @import url('https://fonts.googleapis.com/css?family=Numans');
+
+        html,body{
+            background-image: url('https://images.hdqwalls.com/download/fruit-cones-qhd-1600x1200.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            font-family: 'Numans', sans-serif;
+        }
+
         input[type=button], input[type=submit], input[type=reset] {
             background-color: #5f5911;
             border: none;

@@ -10,7 +10,7 @@ $buyer_id = $db->fetchBuyerID($b_email);
 foreach ($buyer_id as $bID){
 
 }
-echo  "<br>".$bID;
+/*echo  "<br>".$bID;*/
 ?>
 
 <html>
@@ -28,8 +28,38 @@ echo  "<br>".$bID;
         a:hover, a:active {
             background-color: #b4d2bc;
         }
-        body{
-            background-color: ThreeDLightShadow;
+
+        @import url('https://fonts.googleapis.com/css?family=Numans');
+
+        html{
+            background: url('https://i.pinimg.com/originals/86/62/6e/86626e58decaf33b6a6a15f62db200f9.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: fit-content;
+            width: fit-content;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            font-family: 'Numans', sans-serif;
+        }
+
+        table{
+            background-color: lightskyblue;
+            width: 30%;
+        }
+        tr{
+            height: 30px;
+        }
+
+        input[type=button], input[type=submit], input[type=reset] {
+            background-color: #5f5911;
+            border: none;
+            border-radius: 12px;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
         }
     </style>
 </head>

@@ -12,6 +12,30 @@ $row = $db->sellerBuyersList($s_id);
 <head>
 
 </head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Numans');
+
+    html{
+        background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAXFpSrL9x1rAqk6KTdTo9koBAZKRv5paSig&usqp=CAU') no-repeat center center fixed;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: fit-content;
+        width: fit-content;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        font-family: 'Numans', sans-serif;
+    }
+
+    table{
+        background-color: lightgray;
+        width: 30%;
+    }
+    tr{
+        height: 30px;
+    }
+</style>
 <body>
 <table align="center">
     <?php

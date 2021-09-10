@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6936d380-474e-4ea5-ba14-b74800ebc1ac" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/models/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/Login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/Login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/addProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/addProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adminContactList.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminContactList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adminHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminHome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adminSignUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminSignUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/allProducts.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/allProducts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/buyerHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/buyerHome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/buyerOrdersView.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/buyerOrdersView.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/noProductSeller.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/noProductSeller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/productShortDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/productShortDetail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sellerBuyerList.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sellerBuyerList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sellerHome.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sellerHome.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sellerProfile.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sellerProfile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sellerShortDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sellerShortDetails.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/sellersProductShortHist.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/sellersProductShortHist.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/signUp.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/signUp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/topProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/topProduct.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1q6YfXZbcWQ39wYwd7pcX0c995U" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="D:/Node JS Project Files/TestNodeJs" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6936d380-474e-4ea5-ba14-b74800ebc1ac" name="Default Changelist" comment="" />
+      <created>1616401610714</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616401610714</updated>
+      <workItem from="1616401611772" duration="4548000" />
+      <workItem from="1616406665007" duration="10067000" />
+      <workItem from="1616957200747" duration="974000" />
+      <workItem from="1617005754985" duration="601000" />
+      <workItem from="1617012171856" duration="984000" />
+      <workItem from="1618299059477" duration="35000" />
+      <workItem from="1620396171679" duration="2498000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1620410496997">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620410496997" />
+  </component>
+</project>

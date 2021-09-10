@@ -10,11 +10,23 @@ include_once '../controllers/productController.php';
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Numans');
+
+    html,body{
+        background-image: url('https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100%;
+        font-family: 'Numans', sans-serif;
+    }
+</style>
 <body>
 
 <div class="container">
 <table align="center" border="3" class="table">
-    <tr>
+    <tr bgcolor="#ff7f50">
         <td><strong>Seller ID</strong></td>
         <td><strong>PRODUCT Name</strong></td>
         <td><strong>Product ID</strong></td>
